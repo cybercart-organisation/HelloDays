@@ -4,5 +4,11 @@
     "root": ".",
     "integrations": {
         "capacitor": {}
+    },
+    "android": {
+        "variables": {}
+    },
+    "ios": {
+        "variables": {}
     }
 }
