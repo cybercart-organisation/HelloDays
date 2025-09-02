@@ -11,5 +11,7 @@
     "ios": {
         "variables": {}
     },
-    "hooks": []
+    "hooks": [],
+    "environments": {},
+    "builds": {}
 }
