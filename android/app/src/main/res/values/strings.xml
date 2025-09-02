@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">HelloDays</string>
+    <string name="title_activity_main">HelloDays</string>
+    <string name="package_name">com.hellodays.app</string>
+    <string name="custom_url_scheme">com.hellodays.app</string>
+</resources>
