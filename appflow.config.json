@@ -1,5 +1,5 @@
 {
     "appId": "61d93e95",
     "type": "capacitor",
-    "root": "android"
+    "root": "."
 }
