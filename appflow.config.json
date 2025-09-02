@@ -12,6 +12,6 @@
         "variables": {}
     },
     "hooks": [],
-    "environments": {},
+    "environments": [],
     "builds": []
 }
