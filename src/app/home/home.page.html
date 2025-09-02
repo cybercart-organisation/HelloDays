@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-card class="today-card">
+    <ion-card-header>
+      <ion-card-subtitle>{{ today | date: 'EEEE' }}</ion-card-subtitle>
+      <ion-card-title>{{ today | date: 'MMMM d, y' }}</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <!-- Today's Reminders -->
+  <div *ngIf="todaysReminders.length > 0">
+    <ion-list-header>
+      <ion-label>Today's Reminders</ion-label>
+    </ion-list-header>
+    <ion-list [inset]="true">
+      <ion-item *ngFor="let event of todaysReminders">
+        <ion-icon [name]="event.type === 'Birthday' ? 'gift-outline' : 'sparkles-outline'" slot="start" [color]="event.type === 'Birthday' ? 'success' : 'tertiary'"></ion-icon>
+        <ion-label>
+          <h2>{{ event.title }}</h2>
+          <p>{{ event.type }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <!-- Upcoming Reminders -->
+  <div *ngIf="upcomingReminders.length > 0">
+    <ion-list-header>
+      <ion-label>Upcoming in the Next 7 Days</ion-label>
+    </ion-list-header>
+    <ion-list [inset]="true">
+      <ion-item *ngFor="let event of upcomingReminders">
+        <ion-icon [name]="event.type === 'Birthday' ? 'gift-outline' : 'sparkles-outline'" slot="start" [color]="event.type === 'Birthday' ? 'success' : 'tertiary'"></ion-icon>
+        <ion-label>
+          <h2>{{ event.title }}</h2>
+          <p>{{ event.date | date: 'EEEE, MMM d' }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <!-- Today's Name Days -->
+  <div *ngIf="todaysNameDays.length > 0">
+    <ion-list-header>
+      <ion-label>Today's Name Days (Hungary)</ion-label>
+    </ion-list-header>
+    <ion-list [inset]="true">
+      <ion-item *ngFor="let name of todaysNameDays">
+        <ion-label>{{ name }}</ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+
+</ion-content>

@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Calendar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="calendar-header ion-padding-horizontal">
+    <ion-button fill="clear" (click)="previousMonth()">
+      <ion-icon slot="icon-only" name="chevron-back-outline"></ion-icon>
+    </ion-button>
+    <h2>{{ currentDate | date: 'MMMM yyyy' }}</h2>
+    <ion-button fill="clear" (click)="nextMonth()">
+      <ion-icon slot="icon-only" name="chevron-forward-outline"></ion-icon>
+    </ion-button>
+  </div>
+
+  <ion-grid class="calendar-grid">
+    <ion-row class="week-header">
+      <ion-col *ngFor="let day of daysOfWeek">{{ day }}</ion-col>
+    </ion-row>
+    <ion-row *ngFor="let week of calendarDays">
+      <ion-col
+        *ngFor="let day of week"
+        [class.today]="day?.isToday"
+        [class.other-month]="!day?.isCurrentMonth"
+        [ngClass]="{
+          'event-birthday': day?.eventType === 'birthday',
+          'event-nameday': day?.eventType === 'nameDay',
+          'event-both': day?.eventType === 'both'
+        }"
+        (click)="selectDate(day)"
+      >
+        <div class="day-number">{{ day?.date }}</div>
+        <div class="event-names-container">
+          <div *ngFor="let event of day?.events | slice:0:2" class="event-name" [class.reminder-name]="event.isReminder">
+            {{ event.title }}
+          </div>
+          <div *ngIf="(day?.events?.length ?? 0) > 2" class="event-name more-events">
+            ...
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list *ngIf="selectedDayEvents.length > 0">
+    <ion-list-header>
+      <ion-label>{{ selectedDate | date: 'longDate' }}</ion-label>
+    </ion-list-header>
+    <ion-item *ngFor="let event of selectedDayEvents">
+       <ion-label>
+        <h2>{{ event.title }}</h2>
+      </ion-label>
+      <ion-icon [name]="event.type === 'Birthday' ? 'gift-outline' : 'sparkles-outline'" slot="start"></ion-icon>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

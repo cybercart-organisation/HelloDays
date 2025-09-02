@@ -1,0 +1,19 @@
+ion-list-header {
+  font-weight: bold;
+}
+
+ion-list {
+  margin-bottom: 1.5rem;
+}
+
+.today-card {
+  margin-bottom: 2rem;
+  text-align: center;
+  --background: var(--ion-color-primary);
+  --color: var(--ion-color-primary-contrast);
+}
+
+.today-card ion-card-subtitle {
+  color: var(--ion-color-primary-contrast);
+  opacity: 0.8;
+}

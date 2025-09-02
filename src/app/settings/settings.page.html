@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Settings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Appearance</ion-label>
+    </ion-list-header>
+    <ion-item>
+      <ion-icon name="moon-outline" slot="start"></ion-icon>
+      <ion-label>Dark Mode</ion-label>
+      <ion-toggle
+        slot="end"
+        [checked]="themeService.isDarkMode"
+        (ionChange)="onThemeChange($event)"
+      ></ion-toggle>
+    </ion-item>
+
+    <ion-list-header>
+      <ion-label>Reminders</ion-label>
+    </ion-list-header>
+    <ion-item button="true" id="open-time-picker">
+      <ion-icon name="time-outline" slot="start"></ion-icon>
+      <ion-label>Default Time</ion-label>
+      <ion-text slot="end">{{ displayTime | date: 'shortTime' }}</ion-text>
+    </ion-item>
+
+    <ion-popover trigger="open-time-picker" [keepContentsMounted]="true">
+      <ng-template>
+        <ion-datetime
+          presentation="time"
+          [value]="displayTime"
+          (ionChange)="onTimeChange($event)"
+        ></ion-datetime>
+      </ng-template>
+    </ion-popover>
+
+    <ion-list-header>
+      <ion-label>Data Management</ion-label>
+    </ion-list-header>
+    <ion-item button="true" detail="true" (click)="exportData()">
+      <ion-icon name="download-outline" slot="start"></ion-icon>
+      <ion-label>Export Reminders</ion-label>
+    </ion-item>
+    <ion-item button="true" detail="true" (click)="triggerImport()">
+      <ion-icon name="cloud-upload-outline" slot="start"></ion-icon>
+      <ion-label>Import Reminders</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <input type="file" #fileInput (change)="importData($event)" style="display: none" accept="application/json" />
+</ion-content>

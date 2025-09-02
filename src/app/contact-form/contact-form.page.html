@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ isEdit ? 'Edit' : 'Add' }} Contact</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="dismissModal()">Cancel</ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="saveContact()" [disabled]="!contact.firstName">Save</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item>
+      <ion-input label="First Name" labelPlacement="stacked" [(ngModel)]="contact.firstName" (ionInput)="onNameChange($event)" required></ion-input>
+    </ion-item>
+    <!-- Autocomplete Suggestions -->
+    <ion-list *ngIf="nameSuggestions.length > 0">
+      <ion-item button *ngFor="let suggestion of nameSuggestions" (click)="selectNameSuggestion(suggestion)">
+        <ion-label>{{ suggestion }}</ion-label>
+      </ion-item>
+    </ion-list>
+
+    <ion-item>
+      <ion-input label="Last Name" labelPlacement="stacked" [(ngModel)]="contact.lastName"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input label="Phone Number" labelPlacement="stacked" type="tel" [(ngModel)]="contact.phoneNumber"></ion-input>
+    </ion-item>
+
+    <!-- Birthday Section -->
+    <ion-item-divider>
+      <ion-label>Birthday</ion-label>
+    </ion-item-divider>
+    <ion-item button="true" (click)="addDate('birthday')">
+      <ion-label *ngIf="contact.birthday">{{ contact.birthday | date: 'longDate' }}</ion-label>
+      <ion-label *ngIf="!contact.birthday" color="medium">Tap to add birthday</ion-label>
+      <ion-icon *ngIf="!contact.birthday" name="calendar-outline" slot="end" color="medium"></ion-icon>
+      <ion-button *ngIf="contact.birthday" fill="clear" (click)="removeBirthday($event)" slot="end">
+        <ion-icon name="remove-circle-outline" color="danger"></ion-icon>
+      </ion-button>
+    </ion-item>
+
+
+    <!-- Name Days Section -->
+    <ion-item-divider>
+      <ion-label>Name Days</ion-label>
+      <ion-button slot="end" fill="clear" (click)="addDate('nameDay')">
+        <ion-icon name="calendar-outline"></ion-icon>
+      </ion-button>
+    </ion-item-divider>
+    <ion-item *ngFor="let nday of contact.nameDays; let i = index">
+      <ion-label>{{ nday.date | date: 'longDate' }}</ion-label>
+      <ion-button fill="clear" (click)="removeNameDay(i)" slot="end">
+        <ion-icon name="remove-circle-outline" color="danger"></ion-icon>
+      </ion-button>
+    </ion-item>
+
+    <ion-item>
+      <ion-toggle [(ngModel)]="contact.reminderEnabled">Enable Reminders</ion-toggle>
+    </ion-item>
+  </ion-list>
+</ion-content>

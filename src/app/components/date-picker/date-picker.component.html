@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="dismiss(null)">Cancel</ion-button>
+    </ion-buttons>
+    <ion-title>Select Date</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="confirm()" [strong]="true">OK</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-datetime
+    #datetime
+    presentation="date"
+    (ionChange)="onDateChange($event)"
+  ></ion-datetime>
+</ion-content>

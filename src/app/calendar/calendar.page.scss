@@ -1,0 +1,79 @@
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.calendar-grid {
+  text-align: center;
+}
+
+.week-header ion-col {
+  font-weight: bold;
+}
+
+ion-col {
+  padding: 2px;
+  height: 60px; /* Increased height for names */
+  position: relative;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.day-number {
+  font-size: 0.9em;
+  margin-bottom: 2px;
+}
+
+.other-month {
+  opacity: 0.3;
+}
+
+.today .day-number {
+  background-color: var(--ion-color-primary);
+  color: var(--ion-color-primary-contrast);
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  line-height: 22px;
+  margin: 0 auto 2px;
+}
+
+/* Event Highlighting Classes */
+.event-birthday {
+  background-color: rgba(var(--ion-color-success-rgb), 0.2);
+}
+
+.event-nameday {
+  background-color: rgba(var(--ion-color-tertiary-rgb), 0.2);
+}
+
+.event-both {
+  background: linear-gradient(
+    135deg,
+    rgba(var(--ion-color-success-rgb), 0.2) 50%,
+    rgba(var(--ion-color-tertiary-rgb), 0.2) 50%
+  );
+}
+
+/* New styles for event names */
+.event-names-container {
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.event-name {
+  font-size: 0.6em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 2px;
+}
+
+.reminder-name {
+  font-weight: bold;
+  color: var(--ion-color-primary);
+}
