@@ -6,17 +6,17 @@
         "capacitor": {}
     },
     "android": {
-        "variables": []
+        "variables": {}
     },
     "ios": {
-        "variables": []
+        "variables": {}
     },
     "hooks": [],
     "environments": [],
     "builds": [
         {
             "platform": "android",
-            "workflow": "cordova",
+            "workflow": "capacitor",
             "env": {}
         }
     ]
