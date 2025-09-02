@@ -1,8 +1,8 @@
 {
-  "name": "HelloDays",
+  "name": "hellodays",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "author": "CyberCart.org",
+  "homepage": "https://cybercart.org/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
