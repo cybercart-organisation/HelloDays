@@ -21,7 +21,7 @@ export class BackupService {
 
     const a = document.createElement('a');
     a.href = url;
-    a.download = `halodays_backup_${new Date().toISOString().slice(0, 10)}.json`;
+    a.download = `hellodays_backup_${new Date().toISOString().slice(0, 10)}.json`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);

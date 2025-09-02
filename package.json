@@ -1,5 +1,5 @@
 {
-  "name": "HaloDays",
+  "name": "HelloDays",
   "version": "0.0.1",
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
@@ -23,7 +23,7 @@
     "@angular/router": "^20.0.0",
     "@capacitor/android": "^7.4.3",
     "@capacitor/app": "7.0.2",
-    "@capacitor/core": "7.4.3",
+    "@capacitor/core": "^7.4.3",
     "@capacitor/haptics": "7.0.2",
     "@capacitor/keyboard": "7.0.2",
     "@capacitor/local-notifications": "^7.0.2",
