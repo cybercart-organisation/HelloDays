@@ -17,7 +17,11 @@
         {
             "platform": "android",
             "workflow": "capacitor",
-            "env": {}
+            "env": {},
+            "targets": [
+                "device",
+                "emulator"
+            ]
         }
     ]
 }
