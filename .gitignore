@@ -52,8 +52,6 @@ yarn-error.log
 !.vscode/extensions.json
 .history/*
 
-# Environment files
-.env
 
 # Miscellaneous
 /.angular
@@ -66,11 +64,7 @@ yarn-error.log
 /libpeerconnection.log
 testem.log
 /typings
-/keys
 
 # System files
 .DS_Store
 Thumbs.db
-
-# Custom build artifacts
-scripts/version-cache.json
