@@ -29,6 +29,7 @@
     "@capacitor/local-notifications": "^7.0.2",
     "@capacitor/preferences": "^7.0.2",
     "@capacitor/status-bar": "7.0.2",
+    "@capacitor/splash-screen": "7.0.2",
     "@ionic/angular": "^8.0.0",
     "@ionic/storage-angular": "^4.0.0",
     "ionicons": "^7.0.0",
@@ -62,7 +63,8 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~5.8.0"
+    "typescript": "~5.8.0",
+    "cordova-res": "^0.15.4"
   },
   "description": "An Ionic project"
 }
