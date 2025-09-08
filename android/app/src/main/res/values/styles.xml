@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--
-    Base application theme.
-    Inherits from a standard theme. This is required by the <application> tag in AndroidManifest.xml.
-    -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-    </style>
-
-    <!--
-    Default theme for the MainActivity after the splash screen has finished.
-    -->
-    <style name="AppTheme.NoActionBarLaunch" parent="Theme.AppCompat.DayNight.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
-
-    <!--
-    Our custom splash screen theme.
+    This style is used for the splash screen.
     It inherits from a standard, crash-safe theme and applies our custom layout.
     -->
     <style name="AppTheme.Splash" parent="Theme.AppCompat.DayNight.NoActionBar">
