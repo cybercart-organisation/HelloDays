@@ -18,7 +18,7 @@ android {
         applicationId "com.hellodays.app"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 9
+        versionCode 10
         versionName getPackageVersionName()
         resValue "string", "app_version", "v" + getPackageVersionName()
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
