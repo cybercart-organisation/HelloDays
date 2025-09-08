@@ -1,6 +1,6 @@
 {
   "name": "hellodays",
-  "version": "0.0.1",
+  "version": "0.0.7",
   "author": "CyberCart.org",
   "homepage": "https://cybercart.org/",
   "scripts": {
@@ -62,7 +62,8 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~5.8.0"
+    "typescript": "~5.8.0",
+    "@capacitor/assets": "^3.0.5"
   },
   "description": "An Ionic project"
 }
