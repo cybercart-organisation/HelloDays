@@ -1,12 +1,12 @@
 {
   "name": "hellodays",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "CyberCart.org",
   "homepage": "https://cybercart.org/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "node scripts/update-version.js && ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint"

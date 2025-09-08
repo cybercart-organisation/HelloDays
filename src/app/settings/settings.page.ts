@@ -8,6 +8,7 @@ import { NotificationService } from '../services/notification.service';
 import { DataService } from '../services/data.service';
 import { SettingsService, AppSettings } from '../services/settings.service';
 import { Subscription } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-settings',
@@ -19,6 +20,7 @@ import { Subscription } from 'rxjs';
 export class SettingsPage implements OnInit, OnDestroy {
   @ViewChild('fileInput') fileInput!: ElementRef;
   
+  appVersion: string = environment.appVersion;
   // This property will be a full ISO string for the template to use
   displayTime: string = new Date().toISOString();
   private settingsSub!: Subscription;

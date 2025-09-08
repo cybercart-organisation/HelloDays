@@ -1,5 +1,16 @@
 apply plugin: 'com.android.application'
 
+// Function to read and parse package.json
+def getPackageVersionName() {
+    def packageFile = new File("$rootDir/../../package.json")
+    if (packageFile.exists()) {
+        def packageJson = new groovy.json.JsonSlurper().parseText(packageFile.text)
+        return packageJson.version
+    }
+    return "0.0.0" // Default value
+}
+
+
 android {
     namespace "com.hellodays.app"
     compileSdk rootProject.ext.compileSdkVersion
@@ -7,8 +18,9 @@ android {
         applicationId "com.hellodays.app"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 2
-        versionName "1.0.1"
+        versionCode 4
+        versionName getPackageVersionName()
+        resValue "string", "app_version", "v" + getPackageVersionName()
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         aaptOptions {
              // Files and dirs to omit from the packaged assets dir, modified to accommodate modern web apps.
